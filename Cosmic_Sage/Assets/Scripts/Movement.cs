@@ -1,35 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Movement : MonoBehaviour
 {
-    public Transform[] waypoints; // Array of waypoints defining the path
+    public Transform[] waypoints;
     public float speed = 5f;
-    public float rotationSpeed = 5f; // Adjust the rotation speed
+    public float rotationSpeed = 5f;
+    public PlayableDirector playerTimeline;
     private int currentWaypointIndex = 0;
+
+    private bool isTimelinePlayed = false;
+
+    void Start()
+    {
+        if (playerTimeline != null)
+        {
+            playerTimeline.Play();
+            playerTimeline.stopped += OnPlayerTimelineStopped;
+        }
+        else
+        {
+            enabled = true;
+            isTimelinePlayed = true;
+        }
+    }
 
     void Update()
     {
-        // Move towards the current waypoint
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
-
-        // Check if reached the current waypoint
-        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+        if (isTimelinePlayed && enabled)
         {
-            // Move to the next waypoint
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-        }
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
 
-        // Calculate the direction to the next waypoint
-        Vector3 direction = (waypoints[currentWaypointIndex].position - transform.position).normalized;
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+            {
+                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            }
 
-        // Update the rotation of the spaceship to face the direction smoothly
-        if (direction != Vector3.zero)
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            Vector3 direction = (waypoints[currentWaypointIndex].position - transform.position).normalized;
+
+            if (direction != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            }
         }
     }
-}
 
+    void OnPlayerTimelineStopped(PlayableDirector director)
+    {
+        enabled = true;
+        isTimelinePlayed = true;
+    }
+}
