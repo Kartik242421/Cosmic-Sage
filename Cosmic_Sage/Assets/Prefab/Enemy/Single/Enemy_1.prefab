@@ -1306,6 +1306,7 @@ GameObject:
   - component: {fileID: 6715068316816013837}
   - component: {fileID: 3863954751615129176}
   - component: {fileID: 460354897229778052}
+  - component: {fileID: 2889986834233945972}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -1321,7 +1322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8063427331840686501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 72.24, y: 88.24, z: 86.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1379,6 +1380,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2889986834233945972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063427331840686501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6105f2a46e0e47ad7d0e5313261e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVFX: {fileID: 1648677083799180343, guid: 2078656a7ee6aca48b6bb577523129f7, type: 3}
+  hitVFX: {fileID: 1648677083799180343, guid: 2f7f733d83b32f0408ff9c400cac566a, type: 3}
+  parent: {fileID: 0}
+  scorePerHit: 15
+  hitPoints: 2
 --- !u!1 &8419211128336229306
 GameObject:
   m_ObjectHideFlags: 0

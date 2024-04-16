@@ -341,8 +341,9 @@ GameObject:
   - component: {fileID: 6941516084229045849}
   - component: {fileID: 3735182915117779690}
   - component: {fileID: -2667396144434120813}
+  - component: {fileID: -5589880395105813983}
   m_Layer: 0
-  m_Name: Enemy_5
+  m_Name: e5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,6 +432,20 @@ MonoBehaviour:
   parent: {fileID: 0}
   scorePerHit: 50
   hitPoints: 5
+--- !u!114 &-5589880395105813983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245935511953552711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a94b637c7cbe3428ad3e50a1daa1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  speed: 5
 --- !u!1 &2475721349452022738
 GameObject:
   m_ObjectHideFlags: 0
