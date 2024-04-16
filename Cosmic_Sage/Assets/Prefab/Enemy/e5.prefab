@@ -427,9 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6105f2a46e0e47ad7d0e5313261e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 1648677083799180343, guid: 2078656a7ee6aca48b6bb577523129f7, type: 3}
+  deathFX: {fileID: 1648677083799180343, guid: 2078656a7ee6aca48b6bb577523129f7, type: 3}
   hitVFX: {fileID: 1648677083799180343, guid: 2f7f733d83b32f0408ff9c400cac566a, type: 3}
-  parent: {fileID: 0}
   scorePerHit: 50
   hitPoints: 5
 --- !u!114 &-5589880395105813983
@@ -446,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   speed: 5
+  turnSpeed: 5
 --- !u!1 &2475721349452022738
 GameObject:
   m_ObjectHideFlags: 0

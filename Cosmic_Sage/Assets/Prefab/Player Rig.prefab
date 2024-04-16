@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 20
   rotationSpeed: 2
+  playerTimeline: {fileID: 0}
 --- !u!1001 &3087114974822275643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5489051278619940211}
     m_Modifications:
+    - target: {fileID: 1485471243565466259, guid: 8f88d3075a34a9f4a9f69fc28810b6b9, type: 3}
+      propertyPath: crashVFX
+      value: 
+      objectReference: {fileID: 4073819629087518733}
     - target: {fileID: 3895420615125869946, guid: 8f88d3075a34a9f4a9f69fc28810b6b9, type: 3}
       propertyPath: m_Name
       value: Player_Ship
@@ -229,5 +234,10 @@ PrefabInstance:
 --- !u!4 &1698739362217190907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4414795120574988224, guid: 8f88d3075a34a9f4a9f69fc28810b6b9, type: 3}
+  m_PrefabInstance: {fileID: 3087114974822275643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4073819629087518733 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1323706346898745910, guid: 8f88d3075a34a9f4a9f69fc28810b6b9, type: 3}
   m_PrefabInstance: {fileID: 3087114974822275643}
   m_PrefabAsset: {fileID: 0}
