@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+
+    //player collision
+
     [SerializeField] float loadDelay = 1f;
     [SerializeField] ParticleSystem crashVFX;
 
     void OnTriggerEnter(Collider other)
     {
         StartCrashSequence();
-        
     }
 
     void StartCrashSequence()

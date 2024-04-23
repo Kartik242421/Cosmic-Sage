@@ -10,12 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] int scorePerHit = 15;
     [SerializeField] int hitPoints = 2;
 
-    ScoreBoard scoreBoard;
+  
 
     void Start()
     {
         parentGameObject = GameObject.FindWithTag("SpawnAtRunTime");
-        scoreBoard = FindObjectOfType<ScoreBoard>();
         AddRigidGBody();
     }
 
@@ -46,12 +45,16 @@ public class Enemy : MonoBehaviour
     }
     void KillEnemy()
     {
-        scoreBoard.IncreaseScore(scorePerHit);
+        // Increase score
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.IncreaseScore(scorePerHit);
+        }
+
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parentGameObject.transform;
         Destroy(gameObject);
-
     }
 
-    
+
 }

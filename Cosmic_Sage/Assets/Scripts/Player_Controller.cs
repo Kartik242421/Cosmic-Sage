@@ -6,16 +6,13 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour
 {
     [Header("General Setup Settings")]
-    [Tooltip("How fast Ship moves left right")] 
-    [SerializeField] float xControlSpeed = 10f;
 
-    [Tooltip("How fast Ship up and down")]
+    //control speed
+    [SerializeField] float xControlSpeed = 10f;
     [SerializeField] float yControlSpeed = 10f;
 
-    [Tooltip("Binds the horizontal positon to move")]
+    //Binds the location
     [SerializeField] float xRange = 10f;
-
-    [Tooltip("Binds the vertical positon to move")]
     [SerializeField] float yRange = 5f;
 
     [Header("Laser gun array")]
